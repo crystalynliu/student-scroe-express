@@ -1,0 +1,21 @@
+{
+  "name": "student-score-express",
+  "version": "1.0.0",
+  "description": "use express and jade make a web site that can record the score of student",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
+    "dev": "node app & node ./node_modules/browser-sync/bin/browser-sync start --proxy 'localhost:3000' --files 'templates'"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "pug": "^2.0.0-beta.12"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8"
+  }
+}
