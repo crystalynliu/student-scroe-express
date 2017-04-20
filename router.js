@@ -3,7 +3,15 @@ var router = express.Router();
 
 // define the home page route
 router.get('/', function (req, res) {
-  res.render('index', { title: 'Hey', message: 'Hello, world!' })
+  res.render('main');
+})
+
+router.get('/searchStudent', function (req, res) {
+  res.render('searchStudent');
+})
+
+router.get('/addStudent', function (req, res) {
+  res.render('addStudent')
 })
 
 module.exports = router

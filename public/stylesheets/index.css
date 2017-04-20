@@ -1,0 +1,27 @@
+body{
+    max-width: 1080px;
+    margin: 10px auto;
+}
+body * {
+    margin: 0;
+    padding: 0;
+}
+
+body ul li {
+    list-style-type: none;
+}
+
+body a {
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+}
+.main .main-menu {
+    width: 30%;
+}
+.main .main-content{
+    width: 70%;
+}
+

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    header.header
+        h1 Header
+    section.main
+        aside.main-menu
+            h3 菜单
+            ul.menu-list
+                li.menu-item
+                    a(href='/searchStudent') 查看学生成绩
+                li.menu-item
+                    a(href='/addStudent') 添加学生信息
+            div.exit
+                a(href='') 退出
+        section.main-content
+            block main-content
