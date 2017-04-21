@@ -1,17 +1,18 @@
 extends layout
 
 block content
-    header.header
-        h1 Header
+    nav.navbar.navbar-inverse.navbar-fixed-top
+        div.container
+            a.navbar-brand SCORE OF STUDENTS
+            div.navbar-right
+                button.btn.btn-default.navbar-btn Sign Out
+                p.navbar-text xqliu
     section.main
         aside.main-menu
-            h3 菜单
-            ul.menu-list
+            ul.nav.nav-pills.nav-stacked
                 li.menu-item
-                    a(href='/searchStudent') 查看学生成绩
+                    a(href='/searchStudent') Search Score
                 li.menu-item
-                    a(href='/addStudent') 添加学生信息
-            div.exit
-                a(href='') 退出
+                    a(href='/addStudent') Add Score for Student
         section.main-content
             block main-content

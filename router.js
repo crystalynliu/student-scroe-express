@@ -11,7 +11,7 @@ router.get('/searchStudent', function (req, res) {
 })
 
 router.get('/addStudent', function (req, res) {
-  res.render('addStudent')
+  res.render('addStudent');
 })
 
 module.exports = router
