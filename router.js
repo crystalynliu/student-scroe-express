@@ -7,7 +7,7 @@ router.get('/', function (req, res) {
 })
 
 router.get('/searchStudent', function (req, res) {
-  res.render('searchStudent');
+  res.render('searchStudent', {studentList: [{name: 123}, {name: 456}]});
 })
 
 router.get('/addStudent', function (req, res) {

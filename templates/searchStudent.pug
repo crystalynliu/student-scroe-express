@@ -2,3 +2,27 @@ extends main
 
 block main-content
     h1 search student
+    form.form-inline.search
+        div.form-group
+            label.sr-only(for='studentNumber') Student Number
+            input.form-control(type='text', id='studentNumber', name='studentNumber', placeholder='Student Number')
+        button.btn.btn-default(type='submit') Search
+    table.table.table-bordered.student-info
+        thead
+            tr
+                th(rowspan=2) Name
+                th(rowspan=2) Class
+                th(colspan=4) Subject Score
+                th(rowspan=2) Average Score
+                th(rowspan=2) Total Score
+            tr
+                th Math
+                th Chinese
+                th English
+                th Coding
+        tbody
+            each student in studentList
+                tr
+                    td= student.name
+
+
