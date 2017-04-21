@@ -1,4 +1,41 @@
 extends main
 
 block main-content
-    h1 add Student
+    h1.title Add Scores for Student
+    form.clearfix
+        div.row
+            div.form-group.col-md-6.col-xs-12
+                label.required(for='studentNumber') Student Number
+                input.form-control(type='text', name='studentNumber', id='studentNumber')
+            div.form-group.col-md-6.col-xs-12
+                label.required(for='studentName') Student Name
+                input.form-control(type='text', name='studentName', id='studentName')
+        div.row
+            div.form-group.col-md-6.col-xs-12
+                label(for='nation') Nation
+                input.form-control(type='text', name='nation', id='nation')
+            div.form-group.col-md-6.col-xs-12
+                label(for='class') Class
+                input.form-control(type='text', name='class', id='class')
+        div.row
+            div.form-group.col-md-12.col-xs-12
+                h3 Subjects' Score
+        div.row
+            div.form-group.col-md-6.col-xs-12
+                label.required(for='math') Math
+                input.form-control(type='number', name='math', id='math')
+        div.row
+            div.form-group.col-md-6.col-xs-12
+                label.required(for='chinese') Chinese
+                input.form-control(type='number', name='chinese', id='chinese')
+        div.row
+            div.form-group.col-md-6.col-xs-12
+                label.required(for='english') English
+                input.form-control(type='number', name='english', id='english')
+        div.row
+            div.form-group.col-md-6.col-xs-12
+                label.required(for='coding') Coding
+                input.form-control(type='number', name='coding', id='coding')
+        div.row
+            div.col-md-6.col-xs-12
+                button.btn.btn-primary(type='submit') Submit
