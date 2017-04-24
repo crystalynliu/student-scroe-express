@@ -1,5 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const studentList = require('./student-info.db');
+
 
 // define the home page route
 router.get('/', function (req, res) {
@@ -7,7 +9,7 @@ router.get('/', function (req, res) {
 })
 
 router.get('/searchStudent', function (req, res) {
-  res.render('searchStudent', {subTitle:'Search Student', studentList: [{name: 123}, {name: 456}]});
+  res.render('searchStudent', {subTitle:'Search Student', studentList: studentList});
 })
 
 router.get('/addStudent', function (req, res) {

@@ -9,6 +9,7 @@ block main-content
     table.table.table-bordered.student-info
         thead
             tr
+                th(rowspan=2) Number
                 th(rowspan=2) Name
                 th(rowspan=2) Class
                 th(colspan=4) Subject Score
@@ -22,6 +23,14 @@ block main-content
         tbody
             each student in studentList
                 tr
-                    td= student.name
+                    td= student.studentNumber
+                    td= student.studentName
+                    td= student.class
+                    td= student.subjectScore.math
+                    td= student.subjectScore.chinese
+                    td= student.subjectScore.english
+                    td= student.subjectScore.coding
+                    td= student.averageScore
+                    td= student.totalScore
 
 
