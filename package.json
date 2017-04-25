@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app",
-    "dev": "node app & node ./node_modules/browser-sync/bin/browser-sync start --proxy 'localhost:3000' --files ['templates', 'public']"
+    "dev": "node app & node ./node_modules/browser-sync/bin/browser-sync start --proxy 'localhost:3000' --files ['templates', 'public']",
+    "test": "node ./node_modules/jasmine-node/bin/jasmine-node spec"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "jasmine-node": "^1.14.5",
     "pug": "^2.0.0-beta.12",
     "pug-bootstrap": "0.0.13"
   },
