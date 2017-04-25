@@ -1,6 +1,6 @@
 const formatInput = require('../src/formatInput');
 
-describe("test format the input", function () {
+describe('test format the input', function () {
 
   describe('format the input about add student info', function () {
     it('return student information object when all attributes of input is not empty', function () {
