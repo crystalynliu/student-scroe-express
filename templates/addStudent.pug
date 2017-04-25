@@ -5,7 +5,7 @@ block main-content
 
     if status === 200
         div.alert.alert-success= message
-    form.clearfix(method='post', action='./addStudent')
+    form.clearfix(method='post', action='/addStudent')
         div.row
             div.form-group.col-md-6.col-xs-12
                 label.required(for='studentNumber') Student Number
