@@ -260,4 +260,21 @@ describe("test format the input", function () {
       expect(formatInput.IsNotValidateOfStudentInfo(studentInfoInputs)).toBe(false);
     })
   })
+
+  describe('format input about the search key words', function () {
+    it('return search keys array when input is string with comma', function () {
+      const searchKeys = '111,222,333,444';
+      const expectResult = [111, 222, 333, 444];
+      let actual = formatInput.studentNumberFormat(searchKeys);
+      expect(actual).toEqual(expectResult);
+    })
+
+    it('return empty array when input is empty', function () {
+      const searchKeys = '';
+      const expectResult = [];
+      let actual = formatInput.studentNumberFormat(searchKeys);
+      expect(actual).toEqual(expectResult);
+    })
+  })
+
 })

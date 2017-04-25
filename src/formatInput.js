@@ -17,9 +17,9 @@ const studentInfoFormat = function (input) {
 }
 
 const studentNumberFormat = function (searchKey) {
-  return searchKey.split(',').map((number) => {
+  return !!searchKey ? searchKey.split(',').map((number) => {
     return parseInt(number);
-  });
+  }) : [];
 }
 
 const IsNotValidateOfStudentInfo = function (input) {
