@@ -49,5 +49,10 @@ body a {
 
 .main .main-content .search .form-group{
     margin-right: 10px;
+    width: 400px;
+}
+
+.main .main-content .search .form-group .form-control {
+    width: 100%;
 }
 

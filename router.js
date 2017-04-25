@@ -22,4 +22,12 @@ router.post('/addStudent', function (req, res) {
   res.render('addStudent', {status: 200, message: '添加学生信息成功！'});
 })
 
+router.post('/searchStudent', function (req, res) {
+  let searchKey = req.body.studentNumber;
+  let searchedStudents = !!searchKey ?
+    handleStudentInfo.searchStudentByNumber(formatInput.studentNumberFormat(searchKey))
+    : studentList;
+  res.render('searchStudent', {searchKey: searchKey, studentList: searchedStudents});
+})
+
 module.exports = router

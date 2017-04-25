@@ -2,10 +2,10 @@ extends main
 
 block main-content
     h1.title Search Student
-    form.form-inline.search
+    form.form-inline.search(method='post', action='/searchStudent')
         div.form-group
             label.sr-only(for='studentNumber') Student Number
-            input.form-control(type='text', id='studentNumber', name='studentNumber', placeholder='Student Number')
+            input.form-control(type='text', id='studentNumber', name='studentNumber', placeholder='Please input student number', value= searchKey)
         button.btn.btn-default(type='submit') Search
     table.table.table-bordered.student-info
         thead
