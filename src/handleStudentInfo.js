@@ -6,8 +6,20 @@ const addStudentInfo = function (studentInfo) {
   studentList.push(Object.assign({}, studentInfo, studentScores));
 }
 
+const searchStudentByNumber = function (studentNumbers) {
+  if(!Array.isArray(studentNumbers)){
+    throw new TypeError('input is not a validate array');
+  }
+  return studentNumbers.reduce((studentFilter, studentNumber) => {
+    return studentFilter.concat(studentList.filter((student) => {
+      return studentNumber === student.studentNumber
+    }))
+  }, []);
+}
+
 const handleStudentInfo = {
-  addStudentInfo: addStudentInfo
+  addStudentInfo: addStudentInfo,
+  searchStudentByNumber: searchStudentByNumber
 }
 
 module.exports = handleStudentInfo;
