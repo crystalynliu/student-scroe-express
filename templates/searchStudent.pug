@@ -1,37 +1,37 @@
 extends main
 
 block main-content
-    h1.title Search Student
-    form.form-inline.search(method='post', action='/searchStudent')
-        div.form-group
-            label.sr-only(for='studentNumber') Student Number
-            input.form-control(type='text', id='studentNumber', name='studentNumber', placeholder='Please input student number', value= searchKey)
-        button.btn.btn-default(type='submit') Search
-    table.table.table-bordered.student-info
-        thead
-            tr
-                th(rowspan=2) Number
-                th(rowspan=2) Name
-                th(rowspan=2) Class
-                th(colspan=4) Subject Score
-                th(rowspan=2) Average Score
-                th(rowspan=2) Total Score
-            tr
-                th Math
-                th Chinese
-                th English
-                th Coding
-        tbody
-            each student in studentList
-                tr
-                    td= student.studentNumber
-                    td= student.studentName
-                    td= student.class
-                    td= student.subjectScore.math
-                    td= student.subjectScore.chinese
-                    td= student.subjectScore.english
-                    td= student.subjectScore.coding
-                    td= student.averageScore
-                    td= student.totalScore
+  h1.title Search Student
+  form.form-inline.search(method='post', action='/searchStudent')
+    div.form-group
+      label.sr-only(for='studentNumber') Student Number
+      input.form-control(type='text', id='studentNumber', name='studentNumber', placeholder='Please input student number', value= searchKey)
+    button.btn.btn-default(type='submit') Search
+  table.table.table-bordered.student-info
+    thead
+      tr
+        th(rowspan=2) Number
+        th(rowspan=2) Name
+        th(rowspan=2) Class
+        th(colspan=4) Subject Score
+        th(rowspan=2) Average Score
+        th(rowspan=2) Total Score
+      tr
+        th Math
+        th Chinese
+        th English
+        th Coding
+    tbody
+      each student in studentList
+        tr
+          td= student.studentNumber
+          td= student.studentName
+          td= student.class
+          td= student.subjectScore.math
+          td= student.subjectScore.chinese
+          td= student.subjectScore.english
+          td= student.subjectScore.coding
+          td= student.averageScore
+          td= student.totalScore
 
 

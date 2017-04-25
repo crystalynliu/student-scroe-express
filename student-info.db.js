@@ -5,7 +5,7 @@ const studentList = [
     nation: '汉',
     class: '一班',
     subjectScore: {
-      math : 80,
+      math: 80,
       chinese: 90,
       english: 65,
       coding: 98
@@ -18,7 +18,7 @@ const studentList = [
     nation: '',
     class: '一班',
     subjectScore: {
-      math : 60,
+      math: 60,
       chinese: 65,
       english: 45,
       coding: 80

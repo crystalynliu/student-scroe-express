@@ -4,32 +4,32 @@ describe('test format the input', function () {
 
   describe('format the input about add student info', function () {
     it('return student information object when all attributes of input is not empty', function () {
-        const studentInfoInputs = {
-          studentNumber: '12344',
-          studentName: 'zhang ooo',
-          nation: 'llll',
-          class: 'kkkk',
-          math: '90',
-          chinese: '80',
-          english: '70',
-          coding: '80'
-        }
+      const studentInfoInputs = {
+        studentNumber: '12344',
+        studentName: 'zhang ooo',
+        nation: 'llll',
+        class: 'kkkk',
+        math: '90',
+        chinese: '80',
+        english: '70',
+        coding: '80'
+      }
 
-        const expectResult = {
-          studentNumber: 12344,
-          studentName: 'zhang ooo',
-          nation: 'llll',
-          class: 'kkkk',
-          subjectScore: {
-            math: 90,
-            chinese: 80,
-            english: 70,
-            coding: 80
-          }
+      const expectResult = {
+        studentNumber: 12344,
+        studentName: 'zhang ooo',
+        nation: 'llll',
+        class: 'kkkk',
+        subjectScore: {
+          math: 90,
+          chinese: 80,
+          english: 70,
+          coding: 80
         }
+      }
 
-        let result = formatInput.studentInfoFormat(studentInfoInputs);
-        expect(result).toEqual(expectResult);
+      let result = formatInput.studentInfoFormat(studentInfoInputs);
+      expect(result).toEqual(expectResult);
     })
 
     it('return student information object when not required attributes of input is empty', function () {

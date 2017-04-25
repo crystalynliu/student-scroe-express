@@ -7,7 +7,7 @@ const addStudentInfo = function (studentInfo) {
 }
 
 const searchStudentByNumber = function (studentNumbers) {
-  if(!Array.isArray(studentNumbers)){
+  if (!Array.isArray(studentNumbers)) {
     throw new TypeError('input is not a validate array');
   }
   return studentNumbers.reduce((studentFilter, studentNumber) => {

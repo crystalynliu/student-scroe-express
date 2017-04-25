@@ -12,7 +12,7 @@ describe('handle student information in db file', function () {
         nation: '汉',
         class: '一班',
         subjectScore: {
-          math : 80,
+          math: 80,
           chinese: 90,
           english: 65,
           coding: 98
@@ -33,7 +33,7 @@ describe('handle student information in db file', function () {
         nation: '汉',
         class: '一班',
         subjectScore: {
-          math : 80,
+          math: 80,
           chinese: 90,
           english: 65,
           coding: 98
@@ -46,7 +46,7 @@ describe('handle student information in db file', function () {
         nation: '',
         class: '一班',
         subjectScore: {
-          math : 60,
+          math: 60,
           chinese: 65,
           english: 45,
           coding: 80
@@ -67,7 +67,7 @@ describe('handle student information in db file', function () {
         nation: '汉',
         class: '一班',
         subjectScore: {
-          math : 80,
+          math: 80,
           chinese: 90,
           english: 65,
           coding: 98
@@ -80,7 +80,7 @@ describe('handle student information in db file', function () {
         nation: '',
         class: '一班',
         subjectScore: {
-          math : 60,
+          math: 60,
           chinese: 65,
           english: 45,
           coding: 80
@@ -100,21 +100,21 @@ describe('handle student information in db file', function () {
 
     it('throw error when input is not a array', function () {
       const studentNumbers = '123456';
-      expect(function(){
+      expect(function () {
         handleStudentInfo.searchStudentByNumber(studentNumbers)
       }).toThrow('input is not a validate array');
     })
 
     it('throw error when input is null', function () {
       const studentNumbers = null;
-      expect(function(){
+      expect(function () {
         handleStudentInfo.searchStudentByNumber(studentNumbers)
       }).toThrow('input is not a validate array');
     })
 
     it('throw error when input is undefined', function () {
       const studentNumbers = undefined;
-      expect(function(){
+      expect(function () {
         handleStudentInfo.searchStudentByNumber(studentNumbers)
       }).toThrow('input is not a validate array');
     })

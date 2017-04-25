@@ -33,23 +33,24 @@ describe('test calculate Scores of students', function () {
     it('throw error when input is a string', function () {
       const subjects = '12345';
 
-      expect(function(){
+      expect(function () {
         calculateScore.calculateStudentScore(subjects)
       }).toThrow('input is not a object');
     })
 
     it('throw error when input is null', function () {
       const subjects = null;
-      expect(function(){
+      expect(function () {
         calculateScore.calculateStudentScore(subjects)
       }).toThrow('input is not a object');
     })
 
     it('throw error when input is undefined', function () {
       const subjects = undefined;
-      expect(function(){
+      expect(function () {
         calculateScore.calculateStudentScore(subjects)
       }).toThrow('input is not a object');
     })
   })
+
 })
