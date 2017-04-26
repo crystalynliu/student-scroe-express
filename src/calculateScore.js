@@ -24,10 +24,30 @@ const calculateTotalAverageScore = function (studentsTotal) {
   return parseFloat(allStudentTotalScore/count || 0);
 }
 
+const calculateTotalMedianScore = function (studentsTotal) {
+  if(!Array.isArray(studentsTotal)){
+    throw new TypeError('input is not a validate array');
+  }
+  studentsTotal.forEach((studentTotal) => {
+    if(isNaN(studentTotal) || studentTotal === null){
+      throw new TypeError('input is not a validate number');
+    }
+  })
+  let sortStudentScore = studentsTotal.sort((a, b) => {
+    return a - b;
+  });
+  let scoreLength = sortStudentScore.length;
+  let medianIndex = Math.floor(scoreLength/2);
+  let medianScore = parseFloat(sortStudentScore[medianIndex]) || 0;
+  return (scoreLength && scoreLength % 2 === 0)
+    ? (medianScore + parseFloat(sortStudentScore[medianIndex - 1]))/2 : medianScore;
+}
+
 
 const calculateScore = {
   calculateStudentScore: calculateStudentScore,
-  calculateTotalAverageScore: calculateTotalAverageScore
+  calculateTotalAverageScore: calculateTotalAverageScore,
+  calculateTotalMedianScore: calculateTotalMedianScore
 }
 
 module.exports = calculateScore;

@@ -53,7 +53,7 @@ describe('test calculate Scores of students', function () {
     })
   })
 
-  describe('calculate all student total score and average score', function () {
+  describe('calculate all student total average score', function () {
     it('check result is right when input the all students total scores', function () {
       const studentsScore = [333, 250];
       const expectResult = 291.5;
@@ -100,5 +100,80 @@ describe('test calculate Scores of students', function () {
         calculateScore.calculateTotalAverageScore(studentsScore)
       }).toThrow('input is not a validate array');
     })
+  })
+
+  describe('calculate median of all students\' total score', function () {
+    it('check result is right when input length of all students\' score is odd', function () {
+      const studentsScore = [100, 360, 210];
+      const expectResult = 210;
+      expect(calculateScore.calculateTotalMedianScore(studentsScore)).toBe(expectResult);
+    })
+
+    it('check result is right when input length of all students\' score is even', function () {
+      const studentsScore = [100, 360, 130.5, 210];
+      const expectResult = 170.25;
+      expect(calculateScore.calculateTotalMedianScore(studentsScore)).toBe(expectResult);
+    })
+
+    it('check result is right when input length of all students\' score is one', function () {
+      const studentsScore = [100];
+      const expectResult = 100;
+      expect(calculateScore.calculateTotalMedianScore(studentsScore)).toBe(expectResult);
+    })
+
+    it('check result is right when input length of all students\' score is zero', function () {
+      const studentsScore = [];
+      const expectResult = 0;
+      expect(calculateScore.calculateTotalMedianScore(studentsScore)).toBe(expectResult);
+    })
+
+    it('throw error when input is not a array', function () {
+      const studentsScore = '123';
+      expect(function(){
+        calculateScore.calculateTotalMedianScore(studentsScore)
+      }).toThrow('input is not a validate array');
+    })
+
+    it('throw error when input is null', function () {
+      const studentsScore = null;
+      expect(function(){
+        calculateScore.calculateTotalMedianScore(studentsScore)
+      }).toThrow('input is not a validate array');
+    })
+
+    it('throw error when input is undefined', function () {
+      const studentsScore = undefined;
+      expect(function(){
+        calculateScore.calculateTotalMedianScore(studentsScore)
+      }).toThrow('input is not a validate array');
+    })
+
+    it('throw error when input is a number string array', function () {
+      const studentsScore = ['100', '200'];
+      const expectResult = 150;
+      expect(calculateScore.calculateTotalMedianScore(studentsScore)).toBe(expectResult);
+    })
+
+    it('throw error when input is not a number array', function () {
+      const studentsScore = ['abc', '++'];
+      expect(function(){
+        calculateScore.calculateTotalMedianScore(studentsScore)
+      }).toThrow('input is not a validate number');
+    })
+
+    it('throw error when input has a undefined value', function () {
+      const studentsScore = [undefined];
+      expect(function(){
+        calculateScore.calculateTotalMedianScore(studentsScore)
+      }).toThrow('input is not a validate number');
+    })
+
+    it('throw error when input has a null value', function () {
+      const studentsScore = [null];
+      expect(function(){
+        calculateScore.calculateTotalMedianScore(studentsScore)
+      }).toThrow('input is not a validate number');
+    })
+
   })
 })
