@@ -18,6 +18,14 @@ const searchStudentByNumber = function (studentNumbers) {
   }, []);
 }
 
+const statisticsStudentScore = function (studentList) {
+  let studentTotalScoreList = studentList.map((student) => {return student.totalScore});
+  return {
+    averageScore: calculateScore.calculateTotalAverageScore(studentTotalScoreList),
+    medianScore: calculateScore.calculateTotalMedianScore(studentTotalScoreList)
+  }
+}
+
 function findStudentInfoByNumber (studentNumber) {
   return studentList.filter((student) => {
     return parseInt(studentNumber) === student.studentNumber
@@ -26,7 +34,8 @@ function findStudentInfoByNumber (studentNumber) {
 
 const handleStudentInfo = {
   addStudentInfo: addStudentInfo,
-  searchStudentByNumber: searchStudentByNumber
+  searchStudentByNumber: searchStudentByNumber,
+  statisticsStudentScore: statisticsStudentScore
 }
 
 module.exports = handleStudentInfo;

@@ -9,7 +9,9 @@ router.get('/', function (req, res) {
 })
 
 router.get('/searchStudent', function (req, res) {
-  res.render('searchStudent', {studentList: studentList});
+  res.render('searchStudent', {
+    studentList: studentList,
+    allStudentScore: handleStudentInfo.statisticsStudentScore(studentList)});
 })
 
 router.get('/addStudent', function (req, res) {
@@ -27,7 +29,10 @@ router.post('/searchStudent', function (req, res) {
   let searchedStudents = !!searchKey ?
     handleStudentInfo.searchStudentByNumber(formatInput.studentNumberFormat(searchKey))
     : studentList;
-  res.render('searchStudent', {searchKey: searchKey, studentList: searchedStudents});
+  res.render('searchStudent', {
+      searchKey: searchKey,
+      studentList: searchedStudents,
+      allStudentScore: handleStudentInfo.statisticsStudentScore(searchedStudents)});
 })
 
 module.exports = router
