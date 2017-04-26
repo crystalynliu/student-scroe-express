@@ -98,6 +98,46 @@ describe('handle student information in db file', function () {
       expect(handleStudentInfo.searchStudentByNumber(studentNumbers)).toEqual(expectResult);
     })
 
+    it('return empty array when input is a number string', function () {
+      const studentNumbers = ['111111'];
+      const expectResult = [{
+        studentNumber: 111111,
+        studentName: '刘 XXX',
+        nation: '汉',
+        class: '一班',
+        subjectScore: {
+          math: 80,
+          chinese: 90,
+          english: 65,
+          coding: 98
+        },
+        averageScore: 83.25,
+        totalScore: 333
+      }];
+      expect(handleStudentInfo.searchStudentByNumber(studentNumbers)).toEqual(expectResult);
+    })
+
+    it('return empty array when input is not a number string', function () {
+      const studentNumbers = ['abb'];
+      expect(function () {
+        handleStudentInfo.searchStudentByNumber(studentNumbers)
+      }).toThrow('input is not a validate array');
+    })
+
+    it('return empty array when inputs has undefined value', function () {
+      const studentNumbers = [undefined];
+      expect(function () {
+        handleStudentInfo.searchStudentByNumber(studentNumbers)
+      }).toThrow('input is not a validate array');
+    })
+
+    it('return empty array when inputs has null value', function () {
+      const studentNumbers = [null];
+      expect(function () {
+        handleStudentInfo.searchStudentByNumber(studentNumbers)
+      }).toThrow('input is not a validate array');
+    })
+
     it('throw error when input is not a array', function () {
       const studentNumbers = '123456';
       expect(function () {

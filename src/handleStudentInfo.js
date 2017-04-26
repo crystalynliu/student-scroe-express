@@ -11,10 +11,17 @@ const searchStudentByNumber = function (studentNumbers) {
     throw new TypeError('input is not a validate array');
   }
   return studentNumbers.reduce((studentFilter, studentNumber) => {
-    return studentFilter.concat(studentList.filter((student) => {
-      return studentNumber === student.studentNumber
-    }))
+    if(isNaN(studentNumber) || studentNumber === null){
+      throw new TypeError('input is not a validate array');
+    }
+    return studentFilter.concat(findStudentInfoByNumber(studentNumber));
   }, []);
+}
+
+function findStudentInfoByNumber (studentNumber) {
+  return studentList.filter((student) => {
+    return parseInt(studentNumber) === student.studentNumber
+  })
 }
 
 const handleStudentInfo = {
